@@ -9,9 +9,6 @@ GAME RULES:
 
 */
 
-// document.querySelector('#current-' + activePlayer).innerHTML = '<em>' dice '</em>';
-// document.querySelector('#current-' + activePlayer).textContent = dice;
-
 
 var scores, roundScore, activePlayer, gamePlaying;
 init();
@@ -21,12 +18,12 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
     // random number gen
     dice = Math.floor(Math.random() * 6) + 1;
 
-    // display the result
+    // display result
     var diceDOM = document.querySelector('.dice')
     diceDOM.style.display = 'block';
     diceDOM.src = 'dice-' + dice + '.png';
 
-    // update the round score if the rolled number was NOT 1 (as 1 loses)
+    // update round score if rolled number was NOT 1 (as 1 loses)
     if (dice !== 1) {
         roundScore += dice;
         document.querySelector('#current-' + activePlayer).textContent = roundScore;
